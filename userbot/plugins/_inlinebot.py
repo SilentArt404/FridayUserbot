@@ -19,7 +19,7 @@ async def inline_handler(event):
         buttons = paginate_help(0, CMD_LIST, "helpme")
         result = builder.article(
             "© Userbot Help",
-            text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
+            text="{}\nCurrently Loaded Pluins: {}".format(query, len(CMD_LIST)),
             buttons=buttons,
             link_preview=False,
         )
