@@ -10,21 +10,36 @@ from userbot import CMD_LIST
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
 
-    @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
-    async def inline_handler(event):
-        builder = event.builder
-        result = None
-        query = event.text
-        if event.query.user_id == bot.uid and query.startswith("Friday"):
-            rev_text = query[::-1]
-            buttons = paginate_help(0, CMD_LIST, "helpme")
-            result = builder.article(
-                "© Userbot Help",
-                text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
-                buttons=buttons,
-                link_preview=False,
+  from telethon import Button
+from telethon.tl import custom
+
+
+@tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+async def inline_handler(event):
+    builder = event.builder
+    result = None
+    query = event.text
+    if event.query.user_id == bot.uid and query.startswith("Friday"):
+        rev_text = query[::-1]
+        buttons = paginate_help(0, CMD_LIST, "helpme")
+        result = builder.article(
+            "© Userbot Help",
+            text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
+            buttons=buttons,
+            link_preview=False,
+        )
+    await event.answer([result] if result else None)
+    if query == "":
+        terminator = 'test bish'
+        buttonz = [
+            (
+                custom.Button.inline("STATS", data=terminator),
+                Button.url("Repo", url="https://github.com/StarkGang/FridayUserbot"),
+                Button.url("Join Channel", url="t.me/Fridayot"),
             )
-        await event.answer([result] if result else None)
+        ]
+    builder.article(title="Stats Module", text=query, buttons=buttonz)
+    await event.answer([buttonz])
 
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
