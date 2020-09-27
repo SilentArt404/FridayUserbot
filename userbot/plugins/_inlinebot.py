@@ -29,16 +29,16 @@ async def inline_handler(event):
             link_preview=False,
         )
     await event.answer([result] if result else None)
-    if query == "":
+    if query == "noob":
         terminator = 'test bish'
-        buttonz = [
+        butto = [
             (
                 custom.Button.inline("STATS", data=terminator),
                 Button.url("Repo", url="https://github.com/StarkGang/FridayUserbot"),
                 Button.url("Join Channel", url="t.me/Fridayot"),
             )
         ]
-    builder.article(title="Stats Module", text=query, buttons=buttonz)
+    buttonz = builder.article(title="Stats Module", text=query, buttons=butto)
     await event.answer([buttonz])
 
     @tgbot.on(
