@@ -3,17 +3,12 @@ Fixed And Customized By @StarkXD
 Don't Edit Before This Line"""
 import re
 from math import ceil
-
 from telethon import custom, events
-
+from telethon import Button
+from telethon.tl import custom
 from userbot import CMD_LIST
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
-
-  from telethon import Button
-from telethon.tl import custom
-
-
 @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
 async def inline_handler(event):
     builder = event.builder
