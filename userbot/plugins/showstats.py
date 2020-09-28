@@ -5,8 +5,8 @@ from var import Var
 
 
 
-@borg.on(admin_cmd(pattern="stats$"))
-@borg.on(sudo_cmd(pattern="stats$", allow_sudo=True))
+@borg.on(admin_cmd(pattern="showstats$"))
+@borg.on(sudo_cmd(pattern="showstats$", allow_sudo=True))
 async def stats(event):
     if event.fwd_from:
         return
