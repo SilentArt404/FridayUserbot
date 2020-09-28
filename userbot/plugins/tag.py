@@ -70,7 +70,6 @@ async def all_messages_catcher(event):
         link_preview=False,
         buttons=[
             [custom.Button.url(button_text, message_link)]
-        ],
-        silent=True
+        ]
     )
 
