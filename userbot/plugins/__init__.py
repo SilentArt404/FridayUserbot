@@ -1,6 +1,6 @@
 from userbot import topfunc
 from userbot.utils import admin_cmd
-from userbot.uniborgConfig import Config
+from var import Var as Config
 
 
 idgen = topfunc.id_generator
