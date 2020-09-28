@@ -29,9 +29,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         title="Test"
         text="test"
         buttons = [
-                custom.Button.inline("STATS", data=terminator),
-                Button.url("Repo", url="https://github.com/StarkGang/FridayUserbot"),
-                Button.url("Join Channel", url="t.me/Fridayot"),
+                [custom.Button.inline("STATS", data=terminator)],
+                [Button.url("Repo", url="https://github.com/StarkGang/FridayUserbot")],
+                [Button.url("Join Channel", url="t.me/Fridayot")],
             ]
         )
     await event.answer([result] if result else None)
