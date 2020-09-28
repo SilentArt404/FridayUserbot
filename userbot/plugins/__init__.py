@@ -1,4 +1,5 @@
 from userbot import topfunc
+from userbot.utils import admin_cmd
 from userbot.uniborgConfig import Config
 idgen = topfunc.id_generator
 findnemo = topfunc.stark_finder
