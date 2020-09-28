@@ -8,6 +8,7 @@ idgen = topfunc.id_generator
 findnemo = topfunc.stark_finder
 issudousing = Config.SUDO_USERS
 islogokay = Config.PRIVATE_GROUP_ID
+isdbfine = Var.DB_URI
 isherokuokay = Var.HEROKU_APP_NAME
 gdriveisshit = Config.AUTH_TOKEN_DATA
 wttrapi = Config.OPEN_WEATHER_MAP_APPID
@@ -50,10 +51,14 @@ if hmmok:
     meiko = "Added ✅"
 else:
     meiko = "Not Added ❌"
+if isdbfine:
+    dbstats = "Fine ✅"
+else:
+    dbstats = "Not Fine ❌"
 
 inlinestats = (f"X- SHOWING FRIDAY STATS -X \n"
                f"VERSION = {currentversion} \n"
-               f"DATABASE = {datas} \n"
+               f"DATABASE = {dbstats} \n"
                f"SUDO = {amiusingsudo} \n"
                f"LOG-CHAT = {logchat} \n"
                f"HEROKU = {riplife} \n"
