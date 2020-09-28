@@ -4,7 +4,7 @@ Don't Edit Before This Line"""
 import re
 from math import ceil
 
-from telethon import custom, events
+from telethon import custom, events, Button
 
 from userbot import CMD_LIST
 
