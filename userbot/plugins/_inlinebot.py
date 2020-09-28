@@ -25,14 +25,15 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         )
     if query == "noob":
         terminator = 'test bish'
-        butto = [
-            (
+        result = builder.article(
+        title="Test"
+        text="test"
+        buttons = [
                 custom.Button.inline("STATS", data=terminator),
                 Button.url("Repo", url="https://github.com/StarkGang/FridayUserbot"),
                 Button.url("Join Channel", url="t.me/Fridayot"),
-            )
-        ]
-    result = builder.article(title="Stats Module", text=query, buttons=butto)
+            ]
+        )
     await event.answer([result] if result else None)
 
 
