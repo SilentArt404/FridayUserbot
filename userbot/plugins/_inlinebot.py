@@ -3,13 +3,14 @@ Fixed And Customized By @StarkXD
 Don't Edit Before This Line"""
 import re
 from math import ceil
+
 from telethon import custom, events
-from telethon import Button
-from telethon.tl import custom
+
 from userbot import CMD_LIST
 
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
-    @tgbot.on(events.InlineQuery)  # pylint:disable=E060
+
+    @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
         builder = event.builder
         result = None
@@ -18,24 +19,23 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-            "© Friday Help",
-            text="{}\nCurrently Loaded Pluins: {}".format(query, len(CMD_LIST)),
-            buttons=buttons,
-            link_preview=False,
-        )
-    if query == "noob":
-        terminator = 'test bish'
-        result = builder.article(
-        title="xTestx",
-        text="test",
-        buttons = [
-                [custom.Button.inline("STATS", data=terminator)],
-                [Button.url("Repo", "https://github.com/StarkGang/FridayUserbot")],
-                [Button.url("Join Channel", "t.me/Fridayot")],
-            ]
-        )
+                "© Userbot Help",
+                text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
+                buttons=buttons,
+                link_preview=False,
+            )
+        if query == "noob":
+           terminator = 'test bish'
+           result = builder.article(
+           title="xTestx",
+           text="test",
+           buttons = [
+                   [custom.Button.inline("STATS", data=terminator)],
+                   [Button.url("Repo", "https://github.com/StarkGang/FridayUserbot")],
+                   [Button.url("Join Channel", "t.me/Fridayot")],
+             ]
+         )
     await event.answer([result] if result else None)
-
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
             data=re.compile(b"helpme_next\((.+?)\)")
@@ -50,7 +50,6 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             reply_popp_up_alert = "Please get your own Userbot, and don't use mine!"
             await event.answer(reply_popp_up_alert, cache_time=0, alert=True)
-
 
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -68,7 +67,6 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
 
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -123,15 +121,15 @@ def paginate_help(page_number, loaded_plugins, prefix):
     modulo_page = page_number % max_num_pages
     if len(pairs) > number_of_rows:
         pairs = pairs[
-                modulo_page * number_of_rows: number_of_rows * (modulo_page + 1)
-                ] + [
-                    (
-                        custom.Button.inline(
-                            "Previous", data="{}_prev({})".format(prefix, modulo_page)
-                        ),
-                        custom.Button.inline(
-                            "Next", data="{}_next({})".format(prefix, modulo_page)
-                        ),
-                    )
-                ]
+            modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
+        ] + [
+            (
+                custom.Button.inline(
+                    "Previous", data="{}_prev({})".format(prefix, modulo_page)
+                ),
+                custom.Button.inline(
+                    "Next", data="{}_next({})".format(prefix, modulo_page)
+                ),
+            )
+        ]
     return pairs
