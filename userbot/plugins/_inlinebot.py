@@ -30,7 +30,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
            title="xTestx",
            text="test",
            buttons = [
-                   [custom.Button.inline("STATS", "Test")],
+                   [custom.Button.inline("STATS", terminator)],
                    [Button.url("Repo", "https://github.com/StarkGang/FridayUserbot")],
                    [Button.url("Join Channel", "t.me/Fridayot")],
              ]
