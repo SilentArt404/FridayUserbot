@@ -9,9 +9,8 @@ async def _(event):
     animation_interval = 2
     animation_ttl = range(0, 11)
     input_str = event.pattern_match.group(1)
-        rip = await edit_or_reply(event, "`Searching For Users Data Folder 📂`"
-        
-        animation_chars = [
+    rip = await edit_or_reply(event, "`Searching For Users Data Folder 📂`"
+    animation_chars = [
             "`Data Found! Starting Hack.`",
             "`Please Wait. Starting Termal....`",
             "`Hacking... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `",
@@ -26,6 +25,6 @@ async def _(event):
             "`Exporting Data To userbot/plugins/hackdata`..."
             "`Export Complete. Now Check Your Folder 📂`"
     ]
-        for i in animation_ttl:
-            await asyncio.sleep(animation_interval)
-            await rip.edit(animation_chars[i % 11])
+    for i in animation_ttl:
+         await asyncio.sleep(animation_interval)
+         await rip.edit(animation_chars[i % 11])
