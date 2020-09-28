@@ -53,7 +53,7 @@ async def all_messages_catcher(event):
     where_m = get_display_name(where_)
     button_text = "Some One Tagged You Click Here To See That Message 🚶"
 
-    if isinstance(where_, Channel):
+    if isinstance(where_, Chat):
         message_link = f"https://t.me/c/{where_.id}/{event.id}"
     else:
         # not an official link,
