@@ -63,9 +63,9 @@ async def all_messages_catcher(event):
         # Telegram is weird :\
 
     ammoca_message += f"{who_m} [{where_m}]({message_link}) "
-
+    log_chat = Config.PRIVATE_GROUP_ID
     await tgbot.send_message(
-        entity=Config.PRIVATE_GROUP_ID,
+        log_chat,
         message=ammoca_message,
         link_preview=False,
         buttons=[
