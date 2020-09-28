@@ -25,7 +25,7 @@ async def _(event):
             "`Hacking Sucessfull ! Now Please Wait ! Exporting Data...... `"
             "`Exporting Data To userbot/plugins/hackdata`..."
             "`Export Complete. Now Check Your Folder 📂`"
-]
+    ]
         for i in animation_ttl:
             await asyncio.sleep(animation_interval)
             await rip.edit(animation_chars[i % 11])
