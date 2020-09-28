@@ -30,7 +30,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
            title="xTestx",
            text="test",
            buttons = [
-                   [custom.Button.inline("STATS", terminator)],
+                   [custom.Button.inline("STATS", data="terminator")],
                    [Button.url("Repo", "https://github.com/StarkGang/FridayUserbot")],
                    [Button.url("Join Channel", "t.me/Fridayot")],
              ]
@@ -99,7 +99,15 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
 
-
+    @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
+        async def rip(event):
+            if event.query.user_id == bot.uid:
+            text = "Test"
+            await event.answer(txt, alert=True)
+        else:
+            txt = "Not Owner. Fuck You."
+            await event.answer(txt, alert=True)
+                
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = 8
     number_of_cols = 2
