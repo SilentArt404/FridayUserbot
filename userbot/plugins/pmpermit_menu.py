@@ -14,6 +14,7 @@ from userbot import ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in heroku vars"
 PREV_REPLY_MESSAGE = {}
 
+global SADLYF
 
 @command(pattern=r"\/start", incoming=True)
 async def _(event):
