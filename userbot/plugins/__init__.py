@@ -1,13 +1,14 @@
 from userbot import topfunc
 from userbot.utils import admin_cmd
-from var import Var as Config
+from var import Var 
+from userbot.uniborgConfig import Config
 
 
 idgen = topfunc.id_generator
 findnemo = topfunc.stark_finder
 issudousing = Config.SUDO_USERS
 islogokay = Config.PRIVATE_GROUP_ID
-isherokuokay = Config.HEROKU_APP_NAME
+isherokuokay = Var.HEROKU_APP_NAME
 gdriveisshit = Config.G_DRIVE_AUTH_TOKEN_DATA
 sadlifebro = Config.BOTLOG_CHATID
 wttrapi = Config.OPEN_WEATHER_MAP_APPID
