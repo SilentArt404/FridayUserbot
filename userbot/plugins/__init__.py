@@ -51,7 +51,7 @@ if hmmok:
 else:
     meiko = "Not Added ❌"
 
-inlinestats = (f"SHOWING FRIDAY STATS"
+inlinestats = (f"X- SHOWING FRIDAY STATS -X \n"
                f"VERSION = {currentversion} \n"
                f"DATABASE = {datas} \n"
                f"SUDO = {amiusingsudo} \n"
