@@ -3,7 +3,7 @@ Fixed And Customized By @StarkXD
 Don't Edit Before This Line"""
 import re
 from math import ceil
-
+from userbot.plugins import inlinestats
 from telethon import custom, events, Button
 
 from userbot import CMD_LIST
@@ -25,10 +25,9 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 link_preview=False,
             )
         if query == "noob":
-           terminator = "test bish"
            result = builder.article(
-           title="xTestx",
-           text="test",
+           title="Stats",
+           text="Friday Stats",
            buttons = [
                    [custom.Button.inline("STATS", data="terminator")],
                    [Button.url("Repo", "https://github.com/StarkGang/FridayUserbot")],
@@ -102,7 +101,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
     async def rip(event):
             if event.query.user_id == bot.uid:
-                text = "Test"
+                text = inlinestats
                 await event.answer(text, alert=True)
             else:
                 txt = "Not Owner. Fuck You."
