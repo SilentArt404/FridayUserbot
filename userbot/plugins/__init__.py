@@ -1,5 +1,5 @@
 from userbot import topfunc
-
+from userbot.uniborgConfig import Config
 idgen = topfunc.id_generator
 findnemo = topfunc.stark_finder
 
