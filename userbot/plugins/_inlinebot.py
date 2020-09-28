@@ -103,10 +103,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def rip(event):
             if event.query.user_id == bot.uid:
                 text = "Test"
-            await event.answer(text, alert=True)
+                await event.answer(text, alert=True)
             else:
                 txt = "Not Owner. Fuck You."
-            await event.answer(txt, alert=True)
+                await event.answer(txt, alert=True)
                 
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = 8
