@@ -11,6 +11,7 @@ async def stats(event):
     if event.fwd_from:
         return
     botusername = Var.TG_BOT_USER_NAME_BF_HER
+    noob = "noob"
     if event.reply_to_msg_id:
         reply_to_id = await event.get_reply_message()
     yourid = bot.uid
