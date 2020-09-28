@@ -10,7 +10,6 @@ issudousing = Config.SUDO_USERS
 islogokay = Config.PRIVATE_GROUP_ID
 isherokuokay = Var.HEROKU_APP_NAME
 gdriveisshit = Config.AUTH_TOKEN_DATA
-sadlifebro = Var.BOTLOG_CHATID
 wttrapi = Config.OPEN_WEATHER_MAP_APPID
 rmbg = Config.REM_BG_API_KEY
 hmmok = Config.LYDIA_API
@@ -37,11 +36,6 @@ if gdriveisshit:
 else:
     wearenoob = "Inactive"
 
-if sadlifebro:
-    okpro = "Connected ✅"
-else:
-    okpro = "Dis-Connected ❌"
-
 if rmbg:
     gendu = "Added ✅"
 else:
@@ -64,7 +58,6 @@ inlinestats = (f"SHOWING FRIDAY STATS"
                f"LOG-CHAT = {logchat} \n"
                f"HEROKU = {riplife} \n"
                f"G-DRIVE = {wearenoob} \n"
-               f"BOTLOG = {okpro} \n"
                f"WEATHER = {starknoobs} \n"
                f"LYDIA = {meiko} \n"
                f"RMBG = {gendu}")
