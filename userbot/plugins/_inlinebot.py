@@ -100,10 +100,10 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             reply_pop_up_alert = "Please get your own Userbot, and don't use mine!"
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"terminator")))
-        async def rip(event):
+    async def rip(event):
             if event.query.user_id == bot.uid:
             text = "Test"
-            await event.answer(txt, alert=True)
+            await event.answer(text, alert=True)
         else:
             txt = "Not Owner. Fuck You."
             await event.answer(txt, alert=True)
