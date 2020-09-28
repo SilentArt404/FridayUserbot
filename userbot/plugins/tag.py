@@ -51,7 +51,7 @@ async def all_messages_catcher(event):
     where_ = await event.client.get_entity(event.chat_id)
 
     where_m = get_display_name(where_)
-    button_text = "Some One Tagged You Click Here To See That Message 🚶"
+    button_text = "🚶"
 
     if isinstance(where_, Chat):
         message_link = f"https://t.me/c/{where_.id}/{event.id}"
