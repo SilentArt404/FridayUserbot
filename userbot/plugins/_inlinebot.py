@@ -30,12 +30,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         text="test",
         buttons = [
                 [custom.Button.inline("STATS", data=terminator)],
-                [Button.url("Repo", url="https://github.com/StarkGang/FridayUserbot")],
-                [Button.url("Join Channel", url="t.me/Fridayot")],
+                [Button.url("Repo", "https://github.com/StarkGang/FridayUserbot")],
+                [Button.url("Join Channel", "t.me/Fridayot")],
             ]
         )
     await event.answer([result] if result else None)
-
 
     @tgbot.on(
         events.callbackquery.CallbackQuery(  # pylint:disable=E0602
