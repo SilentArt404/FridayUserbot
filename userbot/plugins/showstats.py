@@ -14,7 +14,6 @@ async def stats(event):
     noob = "noob"
     if event.reply_to_msg_id:
         reply_to_id = await event.get_reply_message()
-    yourid = bot.uid
-    results = await bot.inline_query(botusername, noob) 
-    await results[0].click(event.chat_id)
+    tap = await bot.inline_query(botusername, noob) 
+    await tap[0].click(event.chat_id)
     await event.delete()
