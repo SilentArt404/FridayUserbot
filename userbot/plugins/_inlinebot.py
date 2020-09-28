@@ -25,7 +25,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 link_preview=False,
             )
         if query == "noob":
-           terminator = 'test bish'
+           terminator = "test bish"
            result = builder.article(
            title="xTestx",
            text="test",
